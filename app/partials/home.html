@@ -1,0 +1,87 @@
+<!-- hacks for wonky affix stufs -->
+<style>
+	.affix {
+		top: 30px;
+		margin-top:0;
+		width: 26.35%;
+	}
+</style>
+<script>
+	// wtf bitch affix!
+	$('.homearchive').affix({offset: { top: 300 }});
+</script>
+
+<!-- recursive trees Morty! -->
+<script type='text/ng-template' id='tree_items.html'>
+	<p ng-click='homectrl.showChildrens(data)'> {{data.name}} </a>
+	<ul>
+		<li ng-repeat='datum in data.nodes' ng-show='homectrl.openArchive(data)'>{{datum.name}}</li>
+		<!-- ng-include="'tree_items.html'"></li> -->
+	</ul>
+</script>
+
+
+<div class="section-colored2">
+
+	<div class="container">
+
+		<div class="row homeblog">
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<h2>Modern Business Features Include:</h2>
+				<ul>
+					<li>Bootstrap 3 Framework</li>
+					<li>Mobile Responsive Design</li>
+                    <li>Predefined File Paths</li>
+                    <li>Working PHP Contact Page</li>
+                    <li>Minimal Custom CSS Styles</li>
+                    <li>Unstyled: Add Your Own Style and Content!</li>
+                    <li>Font-Awesome fonts come pre-installed!</li>
+                    <li>100% <strong>Free</strong> to Use</li>
+					<li>Open Source: Use for any project, private or commercial!</li>
+				</ul>
+			</div><!--
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <img class="img-responsive" src="http://placehold.it/700x450/ffffff/cccccc">
+            </div>-->
+		</div>
+        <!-- /.row -->
+		
+		<div class="row homearchive" data-spy='affix' data-offset-top='300'>
+			<div class="col-lg-12 col-md-12 col-sm-12 betterfont">
+				<h2>About This:</h2>
+                My names Brad and I like long walks on the beach and Cokes with two straws.
+				Follow me on these fine social media websites:
+				<br>
+				<br>
+				<a href="http://calnewport.com/blog/2013/09/18/why-i-never-joined-facebook/" target='_blank'>
+					<img src='assets/facebook.png' style='height:50px; margin-left:35px; margin-right: 5px;' />
+				</a>
+				<a href="https://www.linkedin.com/pulse/irony-twitter-mark-a-leon?trk=hp-feed-article-title-hpm" target='_blank'>
+					<img src='assets/twitter2.png' style='height:50px; margin-right: 5px;' />
+				</a>
+				<a
+href="http://www.slate.com/articles/technology/technology/2013/07/instagram_and_self_esteem_why_the_photo_sharing_network_is_even_more_depressing.html" target="_blank">
+					<img src='assets/instagram2.png' style='height:50px; margin-right: 5px;' />
+				</a>
+				<a href="http://danglingpointers.me" target='_blank'>
+					<img src='assets/dangles2.png' style='height:50px;' />
+				</a>
+				<br>
+			</div>
+			<br>
+			<div class="col-lg-12 col-md-12 col-sm-a2 betterfont">
+				<h2>Archives!</h2>
+				All the sweet blogs I wrote.
+				<ul >
+					<li ng-repeat='data in homectrl.tree' ng-include="'tree_items.html'"></li>
+				</ul>
+			</div>
+			<br>
+			<br>
+			<br>
+		</div>
+
+    </div>
+    <!-- /.container -->
+
+</div>

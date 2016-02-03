@@ -1,0 +1,15 @@
+{
+	"name": "node-api",
+	"version": "0.0.0",
+	"description": "Building up to eventually MEAN blog",
+	"main" :"server.js",
+	"author": "Bradius",
+	"dependencies": {
+		"express": "~4.7.2",
+		"mongoose": "~3.6.13",
+		"morgan": "~1.2.2",
+		"body-parser": "~1.5.2",
+		"method-override": "~2.1.2",
+		"serve-favicon":"~2.3.0"
+	}
+}

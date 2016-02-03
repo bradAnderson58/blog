@@ -1,0 +1,42 @@
+Initial Commit
+A Blog about Blogging
+
+This is a blog I made.  Being the extremely important, interesting, and influencial person that I am, I realized there was nowhere for my legions of adoring fans to keep up with my daily thoughts and activities - other than Facebook, Twitter, Instagram, Linkedin, the new Stack Overflow 'Story' page, Google+, and my YouTube channel.  So I created this website to address a burning need in todays society.  You are welcome.
+
+But seriously, this is a tech blog about things I find interesting.  And who knows, maybe a few people will even stumbled upon it and agree with me that these things are interesting.  Or disagree with me vehemently and tell me about it in angry, trollish all-caps comments at the bottom of the page.
+
+So, this being a tech blog, and this being my first blog post (my 'initial commit' if you will), I thought why not do a blog about the efforts of making a blog?  Now, this may seem to be a pretty lame topic, everybody knows you can google www.easyassblogsite.com and set yourself up with a decent blog in about 5 minutes, so whats the big deal?  Well, this being primarily an exercise in improving my own skills, I decided to make a blog the hard way: from scratch.
+
+So it was that I found myself, on a quiet Thursday night, sitting in front of a completely blank index.html page open in Sublime.  I wrote this:
+
+<!DOCTYPE html>
+<html>
+	<head>
+
+	</head>
+	<body>
+
+	</body>
+</html>
+
+I stared at this for about 5 seconds, and then I realized: I don't want to write a whole website from scratch.  Its going to take way too long, and its going to end up looking terrible because Im not a good designer.  So I went on google and started looking up templates.
+
+I decided not to spend too much time 'researching', I wanted to get right in there and start websiting!  So I went with the first promising-sounding result I got, which was this tutorial page (https://www.airpair.com/angularjs/building-angularjs-app-tutorial) which Im going to link to, but suggest you dont visit.  Im not trying to say the guy who wrote it isnt a good developer, Im absolutely convinced he's a great developer - what Im saying is it doesnt seem like he put a lot of time and effort into this particular tutorial, and it shows.  For instance, half of his code snippets dont work:
+
+<div <span class="highlight">ng-include='"templates/header.html"'</span>></div>
+<div <span class="highlight">ng-view</span>></div>
+<div <span class="highlight">ng-include='"templates/footer.html"'</span>></div>
+<!-- lol wut? -->
+
+Now, sure, if you're already familiar with web development it's pretty easy to see what happened here.  He was copy pasting something and got the `span` from wherever he was copying from in his clipboard and we can fix it like this:
+
+<div ng-include='"templates/header.html"'></div>
+<div ng-view></div>
+<div ng-include='"templates/footer.html"'></div>
+
+But thats not the point, I would argue that if you're reading a tutorial, you don't necessarily already know how to debug jacked up html, you're trying to learn.
+
+"Hey calm down there Bradius" you might say, "the guy made the time and effort to post a free tutorial on the internet, why dont you stop looking a gift horse in the mouth and just use his code, thats why you clicked on the link anyway you turd".  Sure, fair enough straw-man tutorial defender guy - and I didn't mean to get all negative here in my very first blog post.  The point I was trying to make was that he posted all the code for the website template from the tutorial on his Github (https://github.com/airpair/T0021-airpair-angularjs-tutorial) and its a really great template.  It looks great, its wired up with AngularJS, and its free of unnecessary `span`s.  Im using a heavily edited version of it for the very site you're looking at right now.  Just feel free to skip the tutorial, is all Im saying.
+
+So anyway, I had my template, so now I could do some fun stuff, like stick in a bunch of photo's of my stunning visage, play with pretty color pallettes, and write some aggressively mediocre content.
+
