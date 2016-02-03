@@ -1,13 +1,10 @@
 
-console.log("load plz");
 angular.module('app')
-	.factory(RestApiShit, 'RestApiShit');
+	.factory('RestApi', RestApi);
 
-console.log("load?");
+RestApi.$inject = ['$resource'];
 
-RestApiShit.$inject = ['$resource'];
-
-function RestApiShit($resource) {
+function RestApi($resource) {
 	console.log("load this fucking code");
 	var factory = {
 		getBlogsData: getBlogsData
@@ -15,13 +12,20 @@ function RestApiShit($resource) {
 	
 	var blogServer = 'http://localhost:8080/api';
 	
-	var getAll = $resource(blogServer + '/blogs/');
+	var getAll = $resource(blogServer + '/blogs/',
+						   {
+								blogId: '@id'
+							},
+						   {
+								get: {method: 'GET', isArray: true}
+						   });
 	
 	return factory;
 	
 	function getBlogsData() {
-		var returns = getAll.get();
+		getAll.get().$promise.then(function(data) {
+			console.log(data);
+		});
 		console.log("method called");
-		console.log(returns);
 	}
 }

@@ -1,11 +1,9 @@
 //(function() {
 angular.module('app').controller(HomeController, "HomeController");
 
-console.log("load the fucking thing");
+HomeController.$inject = ['RestApi'];
 
-//HomeController.$inject = ['RestApiShit'];
-
-function HomeController() {
+function HomeController(RestApi) {
 	console.log("imma home controller yo");
 	
 	var vm = this;
@@ -15,7 +13,7 @@ function HomeController() {
 	vm.showChildrens = showChildrens;
 	vm.openArchive = openArchive;
 	
-	//RestApi.getBlogsData();
+	RestApi.getBlogsData();
 	
 	vm.tree = [
 		{

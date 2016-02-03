@@ -1,31 +1,31 @@
 
   angular
-    .module('app',['ngRoute'])
+    .module('app',['ngRoute', 'ngResource'])
     .config(config);
  // .controller('BlogController', BlogController);
 
 config.$inject = ['$routeProvider'];
 
-  function config($routeProvider) {
+function config($routeProvider) {
 
-    $routeProvider
+	$routeProvider
       // Home
-      .when("/", {
-		templateUrl: "partials/home.html",
-	//	controller: "HomeController",
-	//	controllerAs: 'homectrl'
-	})
+		.when("/", {
+			templateUrl: "partials/home.html",
+		//	controller: "HomeController",
+		//	controllerAs: 'homectrl'
+		})
   
-      // Pages
-      .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
-      .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
+	// Pages
+		.when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
+		.when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
   
-      // Blog
-      .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
-      .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
+	// Blog
+		.when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
+		.when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
   
-      // else 404
-      .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
+	// else 404
+		.otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
   }
 
 /**
