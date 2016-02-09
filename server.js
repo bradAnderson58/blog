@@ -19,7 +19,8 @@ var favicon = require('serve-favicon');
 
 // configuration ==================
 
-mongoose.connect('mongodb://localhost/nodeDB');	// connect to our database
+//mongoose.connect('mongodb://162.243.106.72:27017/blogdb');	// connect to our database
+mongoose.connect('mongodb://localhost:27017/test')
 
 app.use(express.static(__dirname + '/app'));		// set the static files location /public/img will be /img for users
 app.use(morgan('dev'));								// log every request to the console

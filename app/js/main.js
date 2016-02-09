@@ -12,8 +12,8 @@ function config($routeProvider) {
       // Home
 		.when("/", {
 			templateUrl: "partials/home.html",
-		//	controller: "HomeController",
-		//	controllerAs: 'homectrl'
+			controller: "HomeController",
+			controllerAs: 'homectrl'
 		})
   
 	// Pages
@@ -36,7 +36,7 @@ function config($routeProvider) {
 //}
 
 /*
- * Controls all other Pages
+ * Controls all other Pages */
  
 app.controller('PageCtrl', function () {
   console.log("Page Controller reporting for duty.");
@@ -50,4 +50,4 @@ app.controller('PageCtrl', function () {
   $('.tooltip-social').tooltip({
     selector: "a[data-toggle=tooltip]"
   })
-});*/
+});
